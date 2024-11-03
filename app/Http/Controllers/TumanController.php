@@ -13,7 +13,8 @@ class TumanController extends Controller
      */
     public function index()
     {
-        return view('tuman.index');
+        $tumanlar = Tuman::paginate(10);
+        return view('tumanlar.index', compact('tumanlar'));
     }
 
     /**

@@ -13,7 +13,8 @@ class ViloyatController extends Controller
      */
     public function index()
     {
-        return view('viloyat.index');
+        $viloyatlar = Viloyat::paginate(10);
+        return view('viloyatlar.index' , compact('viloyatlar'));
     }
 
     /**

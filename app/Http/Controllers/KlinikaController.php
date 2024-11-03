@@ -13,7 +13,8 @@ class KlinikaController extends Controller
      */
     public function index()
     {
-        return view('klinika.index');
+        $klinikas = Klinika::paginate(10);
+        return view('klinika.index', compact('klinikas'));
     }
 
     /**
